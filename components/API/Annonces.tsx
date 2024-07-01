@@ -27,6 +27,7 @@ const Annonces = () => {
             .then((data) => setAnnonces(data))
             .catch((error) => setError(error.message));
     }, []);
+  
 
     return (
         <ScrollView contentContainerStyle={styles.container}>

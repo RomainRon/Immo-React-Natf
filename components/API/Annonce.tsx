@@ -9,7 +9,7 @@ interface Annonce {
     caracteristique: string;
 }
 
-const Annonces = () => {
+const Annonce = () => {
     const [annonces, setAnnonces] = useState<Annonce[]>([]);
     const [error, setError] = useState<string | null>(null);
     const handlePress = () =>{
@@ -17,7 +17,7 @@ const Annonces = () => {
     }
 
     useEffect(() => {
-        fetch("http://127.0.0.1:3000/get")
+        fetch("http://127.0.0.1:3000/get/{{id}}")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
       },
 });
 
-export default Annonces;
+export default Annonce;
